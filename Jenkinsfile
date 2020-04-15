@@ -36,7 +36,7 @@ pipeline{
 			   sourceFiles: "webapp/target/*.war",
 			   removePrefix: "webapp/target/",
 			   remoteDirectory: "//opt/docker",
-			   execCommand: "ansible-playbook -i /opt/docker/hosts /opt/docker/docker-create-push-webapp.yml --limit localhost",  "ansible-playbook -i /opt/docker/hosts /opt/docker/docker-pull-run-webapp.yml --limit 18.220.175.18"
+			   execCommand: "ansible-playbook -i /opt/docker/hosts /opt/docker/docker-create-push-webapp.yml --limit localhost && ansible-playbook -i /opt/docker/hosts /opt/docker/docker-pull-run-webapp.yml --limit 18.220.175.18"
 			   
       )
      ])
